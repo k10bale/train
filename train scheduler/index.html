@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Train Scheduler</title>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+  <!-- Firebase Reference -->
+  <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+
+  <!-- Moment.js Reference -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+
+</head>
+<body>
+    <style>
+    .body{
+        margin: 0 auto;
+        max-width: 980px;
+        font-family: 'Roboto', sans-serif;
+    }
+    #header{
+        background-color: hotpink ;
+        color:white;
+        font-family: 'Roboto', sans-serif;
+        border-radius: .3rem;
+        height: 120px;
+        
+    
+
+    }
+    #header h1{
+        text-align: center;
+        padding: auto;
+        
+    }
+    #search{
+        font-family: 'Roboto', sans-serif;
+
+    }
+
+    #header i {
+        float:left;
+        top: 50px;
+        font-size: 3rem;
+    }
+
+    #title{
+        margin: 0 auto;
+        top: 33%;
+        position: relative;
+        width: 500px;
+
+    }
+
+    #search-button{
+        display: inline;
+    }
+    #clear-button{
+        display: inline;
+    }
+
+    #search{
+        padding-top: 50px;
+    }
+
+    #train-table{
+        margin: 20px;
+    }
+    
+
+   
+
+    </style>    
+
+    
+    
+    <div id="header" class= "container"> 
+            <div id="title"><h1>Train Times</h1>
+                <h5 class="text-center clock-display">Current Time: <span id = "current-time" class = "clock-display"></span></h5>
+                
+         </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-2">
+
+            </div>
+
+            <div class="col-md-8">
+              
+                      
+             <!-- <div class="card mb-4">
+                 <div class="card-body">
+                    Trains: -->
+                    <table class="table table-dark table-hover" id='train-table'>
+                    <thead>
+                    <tr>
+                     <th scope="col">Train Name</th>
+                    <th scope="col">Destination</th>
+                    <th scope="col">Frequency</th>
+                    <th scope="col">Next Departure</th>
+                    <th scope="col">Mins to Departure</th>
+                   <!-- <th scope="col">Monthly Rate ($)</th>
+                     <th scope="col">Total Billed ($)</th> -->
+                      </tr>
+                     </thead>
+                  <tbody>
+                 </tbody>
+             </table>
+                </div>
+                </div>
+                </div>
+                </div>
+    
+        <div id="search" class= "container">
+            <div class="card card bg-lighty">
+                <h5 class="card-header text-white bg-secondary">Add Train</h5>
+                <div class="card-body">
+            <form>
+            <div class="form-group-row">
+                 <label for="name-input">Train Name</label>
+            <input type="name" class="form-control" id="name-input" aria-describedby="emailHelp">
+             </div>
+             <div class="form-group-row">
+                <label for="destination-input">Destination</label>
+            <input type="destination" class="form-control" id="destination-input" >
+             </div>
+             <div class="form-group-row">
+                <label for="time-input">First Train Time(HH:mm- military time)</label>
+            <input type="departure" class="form-control" id="time-input">
+            </div>
+            <div class="form-group-row">
+                <label for="frequency-input">Frequency (min)</label>
+            <input type="frequency" class="form-control" id="frequency-input">
+                </div>
+                <br>
+            <div>
+                <button class="btn btn-primary float-right" id="add-train-btn">Submit</button>
+            </form>
+            </div>
+            
+            &nbsp;&nbsp;&nbsp;&nbsp; 
+             </form>              
+            </div>
+            </div>
+        </div>
+
+
+        </div>
+      
+       
+ 
+
+<script src="logic.js"></script>
+</body>
+
+
+</html>
+
+
+
+
+
+
+
+
+
